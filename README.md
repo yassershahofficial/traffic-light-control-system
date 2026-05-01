@@ -58,7 +58,7 @@ The sequence ensures that only one direction has the green light at any time, pr
 
 The following waveform shows the output of all three models running with identical inputs. All models produce synchronized, correct traffic light sequences:
 
-![Traffic Light System Waveform](./waveform_example.png)
+![Traffic Light System Waveform](./all_waveforms.png)
 
 **Signal Legends**:
 
