@@ -27,11 +27,8 @@ gtkwave all_models_waveform.vcd
 
 The traffic light controller manages a 4-way intersection with North-South and East-West traffic lights. Each direction cycles through three states:
 
-- **Green** (4 cycles)
-- **Yellow** (1 cycle)
-- **Red** (automated based on other direction)
-
-The sequence ensures that only one direction has the green light at any time, preventing collisions.
+- **Green** (5 cycles)
+- **Yellow** (2 cycles)
 
 ---
 
@@ -112,25 +109,25 @@ traffic-light-control-system/
 └─────────────────────────────────────────┘
 
     ┌─────────────────┐
-    │ S0: NS_G / EW_R │  (4 cycles)
+    │ S0: NS_G / EW_R │  (5 cycles)
     │                 │
     └────────────────┬┘
                      │ count=4
                      ↓
     ┌─────────────────┐
-    │ S1: NS_Y / EW_R │  (1 cycle)
+    │ S1: NS_Y / EW_R │  (2 cycles)
     │                 │
     └────────────────┬┘
                      │ count=1
                      ↓
     ┌─────────────────┐
-    │ S2: NS_R / EW_G │  (4 cycles)
+    │ S2: NS_R / EW_G │  (5 cycles)
     │                 │
     └────────────────┬┘
                      │ count=4
                      ↓
     ┌─────────────────┐
-    │ S3: NS_R / EW_Y │  (1 cycle)
+    │ S3: NS_R / EW_Y │  (2 cycles)
     │                 │
     └────────────────┬┘
                      │ count=1
@@ -159,18 +156,6 @@ vvp traffic_system -vcd all_models_waveform.vcd
 # View waveform
 gtkwave all_models_waveform.vcd
 ```
-
----
-
-## Verification Results
-
-All three models have been verified to:
-
-- ✓ Produce identical output sequences
-- ✓ Maintain proper state transitions
-- ✓ Respect timing constraints (4 cycles for green, 1 for yellow)
-- ✓ Never have conflicting light states
-- ✓ Respond correctly to reset signal
 
 ---
 
