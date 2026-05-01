@@ -2,7 +2,28 @@
 
 This project implements a **traffic light control system** using three different Verilog modeling approaches for the same functionality. All three models produce identical behavior despite using fundamentally different design methodologies.
 
-## 📋 Project Overview
+## Simulation Waveform
+
+The following waveform shows the output of all three models running with identical inputs. All models produce synchronized, correct traffic light sequences:
+
+![Traffic Light System Waveform](./all_waveforms.png)
+
+**Signal Legends**:
+
+- `NS_G`, `NS_Y`, `NS_R`: North-South traffic lights (Green, Yellow, Red)
+- `EW_G`, `EW_Y`, `EW_R`: East-West traffic lights (Green, Yellow, Red)
+- `clk`: Clock signal
+- The waveforms confirm all three models operate identically
+
+**To view the full waveform**:
+
+```bash
+gtkwave all_models_waveform.vcd
+```
+
+---
+
+## Project Overview
 
 The traffic light controller manages a 4-way intersection with North-South and East-West traffic lights. Each direction cycles through three states:
 
@@ -14,7 +35,7 @@ The sequence ensures that only one direction has the green light at any time, pr
 
 ---
 
-## 🔧 Three Implementation Models
+## Three Implementation Models
 
 ### 1. **Behavioral Model** (`behavioral.v`)
 
@@ -54,28 +75,7 @@ The sequence ensures that only one direction has the green light at any time, pr
 
 ---
 
-## 📊 Simulation Waveform
-
-The following waveform shows the output of all three models running with identical inputs. All models produce synchronized, correct traffic light sequences:
-
-![Traffic Light System Waveform](./all_waveforms.png)
-
-**Signal Legends**:
-
-- `NS_G`, `NS_Y`, `NS_R`: North-South traffic lights (Green, Yellow, Red)
-- `EW_G`, `EW_Y`, `EW_R`: East-West traffic lights (Green, Yellow, Red)
-- `clk`: Clock signal
-- The waveforms confirm all three models operate identically
-
-**To view the full waveform**:
-
-```bash
-gtkwave all_models_waveform.vcd
-```
-
----
-
-## 🏗️ Architecture Comparison
+## Architecture Comparison
 
 | Aspect            | Behavioral | Dataflow     | Structural |
 | ----------------- | ---------- | ------------ | ---------- |
@@ -88,7 +88,7 @@ gtkwave all_models_waveform.vcd
 
 ---
 
-## 📁 Files in This Project
+## Files in This Project
 
 ```
 traffic-light-control-system/
@@ -104,7 +104,7 @@ traffic-light-control-system/
 
 ---
 
-## 🔄 State Diagram
+## State Diagram
 
 ```
 ┌─────────────────────────────────────────┐
@@ -140,7 +140,7 @@ traffic-light-control-system/
 
 ---
 
-## 🚀 Running the Simulation
+## Running the Simulation
 
 ### Prerequisites
 
@@ -162,7 +162,7 @@ gtkwave all_models_waveform.vcd
 
 ---
 
-## ✅ Verification Results
+## Verification Results
 
 All three models have been verified to:
 
@@ -174,7 +174,7 @@ All three models have been verified to:
 
 ---
 
-## 📚 Learning Objectives
+## Learning Objectives
 
 This project demonstrates:
 
@@ -187,7 +187,7 @@ This project demonstrates:
 
 ---
 
-## 💡 Key Takeaways
+## Key Takeaways
 
 - **Behavioral models** are ideal for specification and high-level design
 - **Dataflow models** bridge abstraction and hardware realization
@@ -197,7 +197,7 @@ This project demonstrates:
 
 ---
 
-## 🔗 References
+## References
 
 - IEEE Std 1364-2005 (Verilog HDL Language Reference Manual)
 - Traffic Light Controller System Design Patterns
@@ -205,6 +205,6 @@ This project demonstrates:
 
 ---
 
-**Project Status**: ✅ Complete - All three models verified and functional
+**Project Status**: Complete - All three models verified and functional
 
 **Last Updated**: May 2026
